@@ -1,14 +1,14 @@
 version: "3"
-  nginx:
-    image: nginx:latest
-    container_name: webserver
-    restart: unless-stopped
-    ports:
-      - 443:443
-    volumes:
-      - ./nginx.conf:/etc/nginx/nginx.conf
-      - ./ssl:/ssl/
-
+services:
+  # nginx:
+  #   image: nginx:latest
+  #   container_name: webserver
+  #   restart: unless-stopped
+  #   ports:
+  #     - 9096:443
+  #   volumes:
+  #     - ./nginx.conf:/etc/nginx/nginx.conf
+  #     - ./.secret/ssl/:/ssl/
 
   # DATABASES
   # ////////////////////////////////////////////////////////////
@@ -16,25 +16,25 @@ version: "3"
     image: postgres:14
     user: root
     environment:
-      - POSTGRES_USER=odoo
-      - POSTGRES_PASSWORD=odoo15@2021      
-      - POSTGRES_DB=postgres
-    restart: always             # run as a service
+      - POSTGRES_USER
+      - POSTGRES_PASSWORD
+      - POSTGRES_DB
+      - POSTGRES_NON_ROOT_USER
+      - POSTGRES_NON_ROOT_PASSWORD        # run as a service
     volumes:
         - ./data/postgresql:/var/lib/postgresql/data
         - ./init-data.sh:/docker-entrypoint-initdb.d/init-data.sh
 
   # APPSMITH 
   # ////////////////////////////////////////////////////////////
-  appsmith:
-    image: index.docker.io/appsmith/appsmith-ce
-    container_name: appsmith
-    ports:
-      - "80:80"
-      - "443:443"
-    volumes:
-      - ./app/appsmith/stacks:/appsmith-stacks
-    restart: unless-stopped
+  # appsmith:
+  #   image: index.docker.io/appsmith/appsmith-ce
+  #   container_name: appsmith
+  #   ports:
+  #     - "3000:443"
+  #   volumes:
+  #     - ./app/appsmith/stacks:/appsmith-stacks
+  #   restart: unless-stopped
     # Uncomment the lines below to enable auto-update
     # labels:
     #   com.centurylinklabs.watchtower.enable: "true"
@@ -56,14 +56,13 @@ version: "3"
       - postgres 
     ports:
       - "8069:8069"
-      - "20015:8072" # live chat
-    tty: true
-    command: --
+      - "8067:8072" # live chat
+    # tty: true
+    # command: --
     environment:
       - HOST=postgres
-      - DB=${POSTGRES_N8n_DB}
-      - USER=${POSTGRES_ODOO_NON_ROOT_USER}
-      - PASSWORD=${POSTGRES_ODOO_NON_ROOT_PASSWORD}
+      - USER=${POSTGRES_USER}
+      - PASSWORD=${POSTGRES_PASSWORD}
     volumes:
       #- /etc/timezone:/etc/timezone:ro
       #- /etc/localtime:/etc/localtime:ro
@@ -76,28 +75,28 @@ version: "3"
   # N8N 
   # ////////////////////////////////////////////////////////////
   
-  n8n:
-    image: n8nio/n8n
-    restart: always
-    environment:
-      - DB_TYPE=postgresdb
-      - DB_POSTGRESDB_HOST=postgres
-      - DB_POSTGRESDB_PORT=5432
-      - DB_POSTGRESDB_DATABASE=${POSTGRES_N8n_DB}
-      - DB_POSTGRESDB_USER=${POSTGRES_N8N_NON_ROOT_USER}
-      - DB_POSTGRESDB_PASSWORD=${POSTGRES_N8N_NON_ROOT_PASSWORD}
-      - N8N_BASIC_AUTH_ACTIVE=true
-      - N8N_BASIC_AUTH_USER
-      - N8N_BASIC_AUTH_PASSWORD
-    ports:
-      - 5678:5678
-    links:
-      - postgres
-    volumes:
-      - ./data/n8n:/home/node/.n8n
-    # Wait 5 seconds to start n8n to make sure that PostgreSQL is ready
-    # when n8n tries to connect to it
-    command: /bin/sh -c "sleep 5; n8n start"
+  # n8n:
+  #   image: n8nio/n8n
+  #   restart: always
+  #   environment:
+  #     - DB_TYPE=postgresdb
+  #     - DB_POSTGRESDB_HOST=postgres
+  #     - DB_POSTGRESDB_PORT=5432
+  #     - DB_POSTGRESDB_DATABASE=${POSTGRES_N8N_DB}
+  #     - DB_POSTGRESDB_USER=${POSTGRES_N8N_NON_ROOT_USER}
+  #     - DB_POSTGRESDB_PASSWORD=${POSTGRES_N8N_NON_ROOT_PASSWORD}
+  #     - N8N_BASIC_AUTH_ACTIVE=true
+  #     - N8N_BASIC_AUTH_USER
+  #     - N8N_BASIC_AUTH_PASSWORD
+  #   ports:
+  #     - 5678:5678
+  #   links:
+  #     - postgres
+  #   volumes:
+  #     - ./data/n8n:/home/node/.n8n
+  #   # Wait 5 seconds to start n8n to make sure that PostgreSQL is ready
+  #   # when n8n tries to connect to it
+  #   command: /bin/sh -c "sleep 5; n8n start"
 
 
 
