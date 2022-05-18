@@ -10,6 +10,22 @@ version: "3"
       - ./nginx.conf:/etc/nginx/nginx.conf
       - ./ssl:/ssl/
 
+
+  # DATABASES
+  # ////////////////////////////////////////////////////////////
+  postgres:
+    image: postgres:14
+    user: root
+    environment:
+      - POSTGRES_USER=odoo
+      - POSTGRES_PASSWORD=odoo15@2021      
+      - POSTGRES_DB=postgres
+    restart: always             # run as a service
+    volumes:
+        - ./data/postgresql:/var/lib/postgresql/data
+
+  # APPSMITH 
+  # ////////////////////////////////////////////////////////////
   appsmith:
     image: index.docker.io/appsmith/appsmith-ce
     container_name: appsmith
@@ -17,16 +33,41 @@ version: "3"
       - "80:80"
       - "443:443"
     volumes:
-      - ./stacks:/appsmith-stacks
+      - ./app/appsmith/stacks:/appsmith-stacks
     restart: unless-stopped
     # Uncomment the lines below to enable auto-update
-    labels:
-      com.centurylinklabs.watchtower.enable: "true"
+    # labels:
+    #   com.centurylinklabs.watchtower.enable: "true"
 
-  auto_update:
-    image: containrrr/watchtower:latest-dev
+  # auto_update:
+    # image: containrrr/watchtower:latest-dev
+    # volumes:
+    #   - /var/run/docker.sock:/var/run/docker.sock
+    # # Update check interval in seconds.
+    # command: --schedule "0 0 * ? * *" --label-enable --cleanup
+    # restart: unless-stopped
+
+  # ODOO 
+  # ////////////////////////////////////////////////////////////
+  odoo:
+    image: odoo:15
+    user: root
+    depends_on:
+      - postgres 
+    ports:
+      - "8069:8069"
+      - "20015:8072" # live chat
+    tty: true
+    command: --
+    environment:
+      - HOST=postgres
+      - USER=odoo
+      - PASSWORD=odoo15@2021
     volumes:
-      - /var/run/docker.sock:/var/run/docker.sock
-    # Update check interval in seconds.
-    command: --schedule "0 0 * ? * *" --label-enable --cleanup
-    restart: unless-stopped
+      #- /etc/timezone:/etc/timezone:ro
+      #- /etc/localtime:/etc/localtime:ro
+      # - ./entrypoint.sh:/entrypoint.sh   # if you want to install additional Python packages, uncomment this line!
+      - ./app/odoo/addons:/mnt/extra-addons
+      - ./app/odoo/etc:/etc/odoo
+    restart: always             # run as a service
+    
