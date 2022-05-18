@@ -69,6 +69,7 @@ services:
       # - ./entrypoint.sh:/entrypoint.sh   # if you want to install additional Python packages, uncomment this line!
       - ./app/odoo/addons:/mnt/extra-addons
       - ./app/odoo/etc:/etc/odoo
+      - ./data/odoo:/data/odoo
     restart: always             # run as a service
     
 
