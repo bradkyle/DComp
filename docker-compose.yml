@@ -61,8 +61,9 @@ version: "3"
     command: --
     environment:
       - HOST=postgres
-      - USER=odoo
-      - PASSWORD=odoo15@2021
+      - DB=${POSTGRES_N8n_DB}
+      - USER=${POSTGRES_ODOO_NON_ROOT_USER}
+      - PASSWORD=${POSTGRES_ODOO_NON_ROOT_PASSWORD}
     volumes:
       #- /etc/timezone:/etc/timezone:ro
       #- /etc/localtime:/etc/localtime:ro
@@ -82,9 +83,9 @@ version: "3"
       - DB_TYPE=postgresdb
       - DB_POSTGRESDB_HOST=postgres
       - DB_POSTGRESDB_PORT=5432
-      - DB_POSTGRESDB_DATABASE=${POSTGRES_DB}
-      - DB_POSTGRESDB_USER=${POSTGRES_NON_ROOT_USER}
-      - DB_POSTGRESDB_PASSWORD=${POSTGRES_NON_ROOT_PASSWORD}
+      - DB_POSTGRESDB_DATABASE=${POSTGRES_N8n_DB}
+      - DB_POSTGRESDB_USER=${POSTGRES_N8N_NON_ROOT_USER}
+      - DB_POSTGRESDB_PASSWORD=${POSTGRES_N8N_NON_ROOT_PASSWORD}
       - N8N_BASIC_AUTH_ACTIVE=true
       - N8N_BASIC_AUTH_USER
       - N8N_BASIC_AUTH_PASSWORD
