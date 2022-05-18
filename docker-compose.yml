@@ -5,10 +5,15 @@ services:
     container_name: webserver
     restart: unless-stopped
     ports:
-      - 9096:443
+      - 9000:443
+      - 9001:5678
+      - 9002:3000
+      - 9003:8069
+      - 9004:8072
     volumes:
       - ./nginx.conf:/etc/nginx/nginx.conf
       - ./.secret/ssl/:/ssl/
+      - ./data/nginx/log/:/var/log/nginx/
 
   # DATABASES
   # ////////////////////////////////////////////////////////////
