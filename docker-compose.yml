@@ -57,7 +57,7 @@ services:
       - postgres 
     ports:
       - "8069:8069"
-      - "8067:8072" # live chat
+      - "8072:8072" # live chat
     # tty: true
     # command: --
     environment:
