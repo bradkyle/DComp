@@ -1,0 +1,234 @@
+# -*- coding: utf-8 -*-
+from odoo import models, fields, api
+
+
+class LRAEntity(models.Model):
+    _inherit = 'res.partner'
+    _description = 'lra.lra'
+
+    # DealerID	FLOAT	NULLABLE		
+    entity_manager_id = fields.Many2one(
+          "res.users", string="Entity manager", store=True)
+    # DealerID	FLOAT	NULLABLE		
+    dealer_id = fields.Many2one(
+          "res.users", string="Entity dealer", store=True)
+    # Company	STRING	NULLABLE		
+    company_ids = fields.Many2many(
+          "res.users", string="Entity companies", store=True)
+    # EntityTypeID	FLOAT	NULLABLE		
+    entity_type_id = fields.Many2one(
+          "res.users", string="Entity companies", store=True)
+    # EntityCategoryID	FLOAT	NULLABLE		
+    entity_category_id = fields.Many2one(
+          "res.users", string="Entity companies", store=True)
+    # EntityCreatorID	FLOAT	NULLABLE		
+    entity_creator_id = fields.Many2one(
+          "res.users", string="Entity creator", store=True)
+    # EntityUpdaterID	FLOAT	NULLABLE		
+    entity_updater_id = fields.Many2one(
+          "res.users", string="Entity updater", store=True)
+    # ABCCatID	FLOAT	NULLABLE		
+    abc_category_id = fields.Many2one(
+          "res.users", string="Entity companies", store=True)
+    # BusCatID	FLOAT	NULLABLE		
+    bus_category_id = fields.Many2one(
+          "res.users", string="Entity companies", store=True)
+    # Notes	FLOAT	NULLABLE		
+    Notes = fields.Text()
+    # LegalName	STRING	NULLABLE		
+    legal_name = fields.Char()
+    # Switchboard	STRING	NULLABLE		
+    Switchboard = fields.Char()
+    # Fax	STRING	NULLABLE		
+    Fax = fields.Char()
+    # URL	FLOAT	NULLABLE		
+    URL = fields.Char()
+    # Email	STRING	NULLABLE		
+    Email = fields.Char()
+    # VATnum	FLOAT	NULLABLE		
+    VATnum = fields.Char()
+    # VATexemptNum	FLOAT	NULLABLE		
+    VATexempt_num = fields.Char()
+    # AcceptsBackOrders	INTEGER	NULLABLE		
+    accepts_back_orders = fields.Boolean()
+    # MenthodOfContact	FLOAT	NULLABLE		
+    menthod_of_contact = fields.Char()
+    # catdesc	FLOAT	NULLABLE		
+    catdesc = fields.Char()
+    # website	FLOAT	NULLABLE		
+    website = fields.Char()
+    # comptel	FLOAT	NULLABLE		
+    comptel = fields.Char()
+    # NextCallDate	FLOAT	NULLABLE		
+    next_call_date = fields.Date()
+    # accounttypeid	FLOAT	NULLABLE		
+    account_type_id = fields.Many2one(
+          "res.users", string="Entity companies", store=True)
+    # compregnum	FLOAT	NULLABLE		
+    compregnum = fields.Char()
+    # accountnum	STRING	NULLABLE		
+    accountnum = fields.Char()
+    # IsAccountCustomer	FLOAT	NULLABLE		
+    is_account_customer = fields.Boolean()
+    # AccountSupplierID	FLOAT	NULLABLE		
+    account_supplier_id = fields.Many2one(
+          "res.users", string="Entity companies", store=True)
+    # AccountCustomerID	FLOAT	NULLABLE		
+    account_customer_id = fields.Many2one(
+          "res.users", string="Entity companies", store=True)
+    # IsBirthDaySupplier	FLOAT	NULLABLE		
+    is_birth_day_supplier = fields.Boolean()
+    # IsBirthDayCourier	FLOAT	NULLABLE		
+    is_birth_day_courier = fields.Boolean()
+    # IsAnniversaryCourier	FLOAT	NULLABLE		
+    is_anniversary_courier = fields.Boolean()
+    # IsAnniversarySupplier	FLOAT	NULLABLE		
+    is_anniversary_supplier = fields.Boolean()
+    # IsAccountSupplier	FLOAT	NULLABLE		
+    is_account_supplier = fields.Boolean()
+    # IsSupplier	FLOAT	NULLABLE		
+    is_supplier = fields.Boolean()
+
+
+# class LRAEntityAddress(models.Model):
+#     _name = 'lra.lra'
+#     _description = 'lra.lra'
+
+#     # EntityID	STRING	NULLABLE		
+#     entity_ids = fields.Many2Many(
+#           "res.users", string="Entity ids", store=True)
+#     # AddressType	STRING	NULLABLE		
+#     entity_ids = fields.Many2One(
+#           "res.users", string="Entity ids", store=True)
+#     # Address1	STRING	NULLABLE		
+#     Address1 = fields.Char()
+#     # Address2	STRING	NULLABLE		
+#     Address2 = fields.Char()
+#     # Address3	STRING	NULLABLE		
+#     Address3 = fields.Char()
+#     # City	STRING	NULLABLE		
+#     City = fields.Char()
+#     # Region	STRING	NULLABLE		
+#     Region = fields.Char()
+#     # Code	STRING	NULLABLE		
+#     Code = fields.Char()
+#     # Country	STRING	NULLABLE		
+#     Country = fields.Many2One(
+#           "res.country", string="Entity Address Country", store=True)
+#     # State	STRING	NULLABLE		
+#     State = fields.Char()
+#     # IsDefault	INTEGER	NULLABLE		
+#     is_default = fields.Boolean()
+#     # Address4	STRING	NULLABLE		
+#     Address4 = fields.Char()
+
+
+# class LRAEntityContactGroup(models.Model):
+#     _name = 'lra.lra'
+#     _description = 'lra.lra'
+
+#     # EntityContactID	INTEGER	NULLABLE		
+#     entity_contact_iD = fields.Char()
+#     # GroupID	INTEGER	NULLABLE	
+#     group_iD = fields.Char()
+
+#     name = fields.Char()
+#     value = fields.Integer()
+#     value2 = fields.Float(compute="_value_pc", store=True)
+#     description = fields.Text()
+
+
+# class LRAEntityContact(models.Model):
+#     _inherit = 'res.partner'
+#     _description = 'lra.Contact'
+
+#     # EntityID	STRING	NULLABLE		
+#     entity_ids = fields.Many2Many(
+#           "res.users", string="Entity ids", store=True)
+#     # EntityTypeID	STRING	NULLABLE		
+#     entity_type_iD = fields.()
+#     # EntityCategoryID	STRING	NULLABLE		
+#     entity_category_iD = fields.()
+#     # AlternateContactID	STRING	NULLABLE		
+#     alternate_contact_iD = fields.()
+#     # EntityContactUpdaterID	STRING	NULLABLE		
+#     entity_contact_updater_iD = fields.()
+#     # EntityContactCreatorID	STRING	NULLABLE		
+#     entity_contact_creator_iD = fields.()
+#     # PhysicalAddrID	STRING	NULLABLE		
+#     physical_addr_iD = fields.()
+#     # PostalAddrID	STRING	NULLABLE		
+#     postal_addr_iD = fields.()
+#     # ContTypeID	STRING	NULLABLE		
+#     cont_type_iD = fields.()
+#     # PositionID	STRING	NULLABLE		
+#     position_iD = fields.()
+#     # InterestID	STRING	NULLABLE		
+#     interest_iD = fields.()
+#     # SalesConsID	STRING	NULLABLE		
+#     sales_cons_iD = fields.()
+#     # buscatid	STRING	NULLABLE		
+#     buscatid = fields.()
+#     # ABCcatid	STRING	NULLABLE		
+#     ABCcatid = fields.()
+#     # IsDefault	STRING	NULLABLE		
+#     is_default = fields.Boolean()
+#     # Company	STRING	NULLABLE		
+#     Company = fields.Char()
+#     # FirstName	STRING	NULLABLE		
+#     first_name = fields.Char()
+#     # Surname	STRING	NULLABLE		
+#     Surname = fields.Char()
+#     # Title	STRING	NULLABLE		
+#     Title = fields.()
+#     # Initials	STRING	NULLABLE		
+#     Initials = fields.()
+#     # Phone1	STRING	NULLABLE		
+#     Phone1 = fields.()
+#     # Phone2	STRING	NULLABLE		
+#     Phone2 = fields.()
+#     # Phone3	STRING	NULLABLE		
+#     Phone3 = fields.()
+#     # HomePhone	STRING	NULLABLE		
+#     home_phone = fields.()
+#     # Cell	STRING	NULLABLE		
+#     Cell = fields.()
+#     # Fax	STRING	NULLABLE		
+#     Fax = fields.()
+#     # Email	STRING	NULLABLE		
+#     Email = fields.()
+#     # Ext	STRING	NULLABLE		
+#     Ext = fields.()
+#     # Department	STRING	NULLABLE		
+#     Department = fields.()
+#     # Spouse	STRING	NULLABLE		
+#     Spouse = fields.()
+#     # AsstTitle	STRING	NULLABLE		
+#     asst_title = fields.()
+
+
+# class LRAEntityGroup(models.Model):
+#     _name = 'lra.lra'
+#     _description = 'lra.lra'
+
+#     # EntityGroupID	INTEGER	NULLABLE		
+#     entity_group_iD = fields.()
+#     # EntityID	STRING	NULLABLE		
+#     entity_iD = fields.()
+#     # GroupID	INTEGER	NULLABLE		
+#     group_iD = fields.()
+
+
+# class LRACrimeEvent(models.Model):
+#     _name = 'lra.lra'
+#     _description = 'lra.lra'
+
+#     time = field.Date()
+#     unit_number = field.Char()
+#     severity = field.()
+#     description = field.Text()
+#     entity_ids = fields.One2Many(
+#           "res.users", string="Entity ids", store=True)
+#     region = field.Char()
+#     coordinates = field.Char()
+

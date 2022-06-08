@@ -95,7 +95,7 @@ services:
       # - ./entrypoint.sh:/entrypoint.sh   
       - ./app/odoo/addons:/mnt/extra-addons
       # - ./app/odoo/etc/odoo.conf:/etc/odoo/odoo.conf
-      # - ./app/odoo/etc/requirements.txt:/etc/odoo/requirements.txt
+      - ./app/odoo/etc/requirements.txt:/etc/odoo/requirements.txt
       - ./data/odoo/data:/data/odoo
       - ./data/odoo/etc/filestore:/etc/odoo/filestore
     restart: always             # run as a service
