@@ -97,7 +97,7 @@ services:
       # - ./app/odoo/etc/odoo.conf:/etc/odoo/odoo.conf
       # - ./app/odoo/etc/requirements.txt:/etc/odoo/requirements.txt
       - ./data/odoo/data:/data/odoo
-      - ./data/odoo/etc:/etc/odoo
+      - ./data/odoo/etc/filestore:/etc/odoo/filestore
     restart: always             # run as a service
     
 

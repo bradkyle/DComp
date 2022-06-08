@@ -1,99 +1,70 @@
 #!/usr/bin/env python
 """A sample script to demonstrate some of functionalities of OERPLib."""
-import oerplib
+import odoorpc
 
 # XMLRPC server configuration
 SERVER = 'localhost'
 PROTOCOL = 'xmlrpc'
 PORT = 8069
 # Name of the OpenERP database to use
-DATABASE = 'db_name'
+DATABASE = 'lradev'
 
-USER = 'admin'
-PASSWORD = 'password'
+USER = 'odooscript@izonsa.dev'
+PASSWORD = 'OuyQKg4HYyr6ZE'
 
-try:
-    # Login
-    oerp = oerplib.OERP(
-        server=SERVER, database=DATABASE, protocol=PROTOCOL, port=PORT
-    )
-    oerp.login(USER, PASSWORD)
+# Prepare the connection to the server
+odoo = odoorpc.ODOO(SERVER, port=PORT)
 
-    # ----------------------- #
-    # -- Low level methods -- #
-    # ----------------------- #
+# Check available databases
+print(odoo.db.list())
 
-    # Execute - search
-    user_ids = oerp.execute('res.users', 'search', [('id', '=', oerp.user.id)])
-    # Execute - read
-    user_data = oerp.execute('res.users', 'read', user_ids[0])
-    # Execute - write
-    oerp.execute('res.users', 'write', user_ids[0], {'name': "Administrator"})
-    # Execute - create
-    new_user_id = oerp.execute('res.users', 'create', {'login': "New user"})
+# Login
+odoo.login(DATABASE, USER, PASSWORD)
 
-    # --------------------- #
-    # -- Dynamic methods -- #
-    # --------------------- #
+# Current user
+user = odoo.env.user
+print(user.name)            # name of the user connected
+print(user.company_id.name) # the name of its company
 
-    # Get the model
-    user_obj = oerp.get('res.users')
-    # Search IDs of a model that match criteria
-    user_obj.search([('name', 'ilike', "Administrator")])
-    # Create a record
-    new_user_id = user_obj.create({'login': "new_user"})
-    # Read data of a record (just the name field)
-    user_data = user_obj.read([new_user_id], ['name'])
-    # Write a record
-    user_obj.write([new_user_id], {'name': "New user"})
-    # Delete a record
-    user_obj.unlink([new_user_id])
+# Simple 'raw' query
+user_data = odoo.execute('res.users', 'read', [user.id])
+print(user_data)
 
-    # -------------------- #
-    # -- Browse objects -- #
-    # -------------------- #
-
-    # Browse an object
-    user = user_obj.browse(oerp.user.id)
-    print(user.name)
-    print(user.company_id.name)
-    # .. or many objects
-    order_obj = oerp.get('sale.order')
-    for order in order_obj.browse([68, 69]):
+# Use all methods of a model
+if 'sale.order' in odoo.env:
+    Order = odoo.env['sale.order']
+    order_ids = Order.search([])
+    for order in Order.browse(order_ids):
         print(order.name)
-        print(order.partner_id.name)
-        for line in order.order_line:
-            print('\t{}'.format(line.name))
+        products = [line.product_id.name for line in order.order_line]
+        print(products)
 
-    # ----------------------- #
-    # -- Download a report -- #
-    # ----------------------- #
+# Simple 'raw' query
+cont_data = odoo.execute('res.partner', 'read', [user.id])
+print(90*"=")
+print(cont_data)
 
-    so_pdf_path = oerp.report('sale.order', 'sale.order', 1)
-    inv_pdf_path = oerp.report('webkitaccount.invoice', 'account.invoice', 1)
+# Update data through a record
+# user.name = "Brian Jones"
+# new_contact_id = odoo.execute('res.partner', 'create', {
+#       'login': ""
+# })
 
-    # ------------------------- #
-    # -- Databases management-- #
-    # ------------------------- #
+# Simple 'raw' query
+fld_data = odoo.execute('ir.model.fields', 'search_read', [
+    ('model', '=', 'res.partner')])
+print(90*"=")
+print(fld_data)
 
-    # List databases
-    print(oerp.db.list())
-    # Create a database in background
-    oerp.db.create(
-        'super_admin_passwd',
-        'my_db',
-        demo_data=True,
-        lang='fr_FR',
-        admin_passwd='admin_passwd',
-    )
-    # ... after a while, dump it
-    my_dump = oerp.db.dump('super_admin_password', 'my_db')
-    # Create a new database from the dump
-    oerp.db.restore('super_admin_password', 'my_new_db', my_dump)
-    # Delete the old one
-    oerp.db.drop('super_admin_password', 'my_db')
+# f = [
+#     ['switchboard'],
+#     ['accountnum'],
+#     ['iscustomer'],
+#     ['issupplier'],
+#     ['isvatexempt'],
+#     ['acceptsbackorders'],
+#     [''],
+# ]
 
-except oerplib.error.Error as e:
-    print(e)
-except Exception as e:
-    print(e)
+cont_data = odoo.execute('res.partner', 'read', [user.id])
+
