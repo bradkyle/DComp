@@ -2,7 +2,3 @@
 from odoo import models, fields, api
 
 
-class MegaContact(models.Model):
-    _inherit = 'res.partner'
-    _description = 'LRA principal contact'
-

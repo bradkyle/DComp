@@ -84,7 +84,7 @@ services:
       - "8069:8069"
       - "8072:8072" # live chat
     # tty: true
-    # command: --
+    command: --
     environment:
       - HOST=postgres
       - USER=${POSTGRES_USER}

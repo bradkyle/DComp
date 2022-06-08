@@ -89,16 +89,16 @@ class LRAEntity(models.Model):
     is_supplier = fields.Boolean()
 
 
-class LRACrimeEvent(models.Model):
-    _name = 'lra.lra'
-    _description = 'lra.lra'
+class LRAIncedent(models.Model):
+    _name = 'lra.incident'
+    _description = 'An incident that has occured in the LRA (i.e. Crime)'
 
-    time = field.Date()
-    unit_number = field.Char()
-    severity = field.()
-    description = field.Text()
-    entity_ids = fields.One2Many(
-          "res.users", string="Entity ids", store=True)
-    region = field.Char()
-    coordinates = field.Char()
+    time = fields.Date()
+    unit_number = fields.Char()
+    severity = fields.Char()
+    description = fields.Text()
+    entity_ids = fields.One2many(
+          "res.partner", string="Entity ids", store=True)
+    region = fields.Char()
+    coordinates = fields.Char()
 
