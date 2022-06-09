@@ -22,12 +22,12 @@ jobs:
       fail-fast: false
       matrix:
         include:
-          - python-version: "3.6"
-            toxenv: "py36-15.0"
+          # - python-version: "3.6"
+          #   toxenv: "py36-15.0"
           - python-version: "3.8"
             toxenv: "py38-15.0"
-          - python-version: "3.6"
-            toxenv: "twine_check"
+          # - python-version: "3.6"
+          #   toxenv: "twine_check"
     services:
       postgres:
         image: postgres:14
@@ -61,6 +61,7 @@ jobs:
           - "8072:8072" # live chat
         depends_on:
           - postgres
+
     env:
       PGHOST: localhost
       PGPORT: 5432
