@@ -86,8 +86,8 @@ services:
     # tty: true
     command: --
     environment:
-      - HOST=postgres
       - USER=${POSTGRES_USER}
+      - HOST=postgres
       - PASSWORD=${POSTGRES_PASSWORD}
     volumes:
       #- /etc/timezone:/etc/timezone:ro
