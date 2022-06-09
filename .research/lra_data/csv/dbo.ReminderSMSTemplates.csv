@@ -1,0 +1,15 @@
+"ReminderSMSTemplateID","Template","Name","Enabled"
+"5","Hi   [contact],
+
+Whe have created your   [doctype]  [docno]  [docdate]
+
+Regards
+Fusion Software","Created Purchase Order","1"
+"6","hi  [contact]","Accepted Purchase Order","1"
+"7","Hi  [company]  [contact]  [doctype]  [docno]  [docdate]","Created Sales Order","1"
+"8","Hi  [company]  [contact]  [doctype]  [docno]  [docdate]","Accepted Sales Order","1"
+"9","This is to notify that the following ticket has been modified :
+[ticket]","Ticket","1"
+"10","This is to notify that a payment reciept has been modified","Payment Reciept","1"
+"11","This is to notify that a job has been modified:
+ [jobname]","Job","1"

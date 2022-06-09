@@ -1,0 +1,12 @@
+"ReminderEmailTemplateID","Template","Name","Enabled"
+"5","Hi   [contact],
+
+Whe have created your   [doctype]  [docno]  [docdate]
+
+Regards
+Fusion Software","Created Purchase Order","1"
+"6","Hi  [company]  [doctype]  [docdate]","Accepted Purchase Order","1"
+"7","hi  [company]  [contact]  [doctype]  [docno]  [docdate]","Created Sales Order","1"
+"8","","Accepted Sales Order","0"
+"9","","24 hr Quote","0"
+"10","Test","Ticket","1"

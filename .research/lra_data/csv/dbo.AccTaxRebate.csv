@@ -1,0 +1,5 @@
+"TaxRebateID","TaxTemplateID","RebateDescription","RebateValue","AppliedAfterAge"
+"1","1","Primary Rebate","10755.0000","0"
+"2","1","Additional Rebate (65+ years)","6012.0000","65"
+"3","1","Additional Rebate (75+ years)","2000.0000","75"
+"5","3","travel","50000.0000","30"

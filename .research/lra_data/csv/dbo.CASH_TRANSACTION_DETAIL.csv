@@ -1,0 +1,2 @@
+"LineID","DocID","BankAccountId","DivisionId","DatePaid","GLCodeId","RefNo","TotalIncl","VATPerc","Notes","ProjectID","AssetID","ReportCategoryID","EntityID","PaymentDocID","TaxTypeID"
+"53","20","166","","2012-02-23 00:00:00","529","Cash Tran Ref 1","1140.0000","14.0","Cash Tran Note 1","","","","","",""

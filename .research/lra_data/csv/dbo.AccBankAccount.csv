@@ -1,0 +1,2 @@
+"BankAccountID","AccName","OpeningBal","OBDate","AccountNo","Branch","Bank","BranchCode","AccountType","isDefault","Currency","Descr","GLCodeID","DivisionID"
+"272","Demo Account","0.0000","2009-01-01 00:00:00","1234567890","Central Branch","Demo Bank","123456","Savings","1","","Demo Bank Account","",""

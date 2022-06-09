@@ -1,0 +1,4 @@
+"MachineAreaID","Descr","AvailableFrom","AvailableTo","ShutDownTime","Deleted"
+"3","Workbench A","2000-01-01 08:00:00","2000-01-01 17:00:00","10","0"
+"4","Construction Yard 1","2000-01-01 08:00:00","2000-01-01 17:00:00","0","0"
+"5","khjkhkjhkjh","2000-01-01 08:00:00","2000-01-01 17:00:00","0","0"

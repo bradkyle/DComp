@@ -1,0 +1,7 @@
+"OrderlistID","UserID","Formname","Orderlist"
+"5","324","frmContactMan","[EntityContactID],EntityContactID,[City],[Company],[Firstname],[Surname],[Phone1],[Cell],[Fax],[Email]"
+"12","1","frmAuditTrailCalls","CallLogID,[CallLogID],[Call Created By],[Stakeholder],[Contact],[Date],[Direction],[Subject],[Description],[Advanced Call]"
+"13","1","frmAuditTrailEmails","EmailLogID,[EmailLogID],[Sent By],[Company],[Contact],[Email Address],[Telephone],[Date],[Subject],[Status],[Response]"
+"14","1","frmAuditTrailNotes","[noteid],NoteID"
+"15","1","frmAuditTrailSMS","[SMSLogID],SMSLogID"
+"19","1","frmServiceMan","TaskReminderID,[TaskReminderID],[Created By],[Company],[Assigned contact],[Task Organiser],[Task Owner],[Task Name],[Task Date],[Task Time],[Percentage Complete],[Additional Info],[For User],[Priority]"

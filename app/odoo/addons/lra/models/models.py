@@ -2,9 +2,14 @@
 from odoo import models, fields, api
 
 class LRAEntity(models.Model):
-    _inherit = 'res.partner'
+    _name = 'lra.entity'
     _description = 'LRA principal contact'
+    # LegalName	STRING	NULLABLE		
+    entity_id = fields.Char()
 
+    # PartnerID FLOAT	NULLABLE		
+    # entity_partner_id = fields.Many2many(
+    #       "res.partner", string="Entity partners", store=True)
     # DealerID	FLOAT	NULLABLE		
     entity_manager_id = fields.Many2one(
           "res.users", string="Entity manager", store=True)
@@ -12,14 +17,14 @@ class LRAEntity(models.Model):
     dealer_id = fields.Many2one(
           "res.users", string="Entity dealer", store=True)
     # Company	STRING	NULLABLE		
-    company_ids = fields.Many2many(
-          "res.users", string="Entity companies", store=True)
+    # company_ids = fields.Many2many(
+    #       "res.users", string="Entity companies", store=True)
     # EntityTypeID	FLOAT	NULLABLE		
-    entity_type_id = fields.Many2one(
-          "res.users", string="Entity companies", store=True)
+    # entity_type_id = fields.Many2one(
+    #       "res.users", string="Entity companies", store=True)
     # EntityCategoryID	FLOAT	NULLABLE		
-    entity_category_id = fields.Many2one(
-          "res.users", string="Entity companies", store=True)
+    # entity_category_id = fields.Many2one(
+    #       "res.users", string="Entity companies", store=True)
     # EntityCreatorID	FLOAT	NULLABLE		
     entity_creator_id = fields.Many2one(
           "res.users", string="Entity creator", store=True)
@@ -27,78 +32,31 @@ class LRAEntity(models.Model):
     entity_updater_id = fields.Many2one(
           "res.users", string="Entity updater", store=True)
     # ABCCatID	FLOAT	NULLABLE		
-    abc_category_id = fields.Many2one(
-          "res.users", string="Entity companies", store=True)
+    # abc_category_id = fields.Many2one(
+    #       "res.users", string="Entity companies", store=True)
     # BusCatID	FLOAT	NULLABLE		
-    bus_category_id = fields.Many2one(
-          "res.users", string="Entity companies", store=True)
-    # Notes	FLOAT	NULLABLE		
-    Notes = fields.Text()
+    # bus_category_id = fields.Many2one(
+    #       "res.users", string="Entity companies", store=True)
     # LegalName	STRING	NULLABLE		
     legal_name = fields.Char()
     # Switchboard	STRING	NULLABLE		
-    Switchboard = fields.Char()
-    # Fax	STRING	NULLABLE		
-    Fax = fields.Char()
-    # URL	FLOAT	NULLABLE		
-    URL = fields.Char()
-    # Email	STRING	NULLABLE		
-    Email = fields.Char()
-    # VATnum	FLOAT	NULLABLE		
-    VATnum = fields.Char()
-    # VATexemptNum	FLOAT	NULLABLE		
-    VATexempt_num = fields.Char()
-    # AcceptsBackOrders	INTEGER	NULLABLE		
-    accepts_back_orders = fields.Boolean()
-    # MenthodOfContact	FLOAT	NULLABLE		
-    menthod_of_contact = fields.Char()
-    # catdesc	FLOAT	NULLABLE		
-    catdesc = fields.Char()
-    # website	FLOAT	NULLABLE		
-    website = fields.Char()
-    # comptel	FLOAT	NULLABLE		
-    comptel = fields.Char()
-    # NextCallDate	FLOAT	NULLABLE		
-    next_call_date = fields.Date()
-    # accounttypeid	FLOAT	NULLABLE		
-    account_type_id = fields.Many2one(
-          "res.users", string="Entity companies", store=True)
-    # compregnum	FLOAT	NULLABLE		
-    compregnum = fields.Char()
+    switchboard = fields.Char()
     # accountnum	STRING	NULLABLE		
     accountnum = fields.Char()
-    # IsAccountCustomer	FLOAT	NULLABLE		
-    is_account_customer = fields.Boolean()
-    # AccountSupplierID	FLOAT	NULLABLE		
-    account_supplier_id = fields.Many2one(
-          "res.users", string="Entity companies", store=True)
-    # AccountCustomerID	FLOAT	NULLABLE		
-    account_customer_id = fields.Many2one(
-          "res.users", string="Entity companies", store=True)
-    # IsBirthDaySupplier	FLOAT	NULLABLE		
-    is_birth_day_supplier = fields.Boolean()
-    # IsBirthDayCourier	FLOAT	NULLABLE		
-    is_birth_day_courier = fields.Boolean()
-    # IsAnniversaryCourier	FLOAT	NULLABLE		
-    is_anniversary_courier = fields.Boolean()
-    # IsAnniversarySupplier	FLOAT	NULLABLE		
-    is_anniversary_supplier = fields.Boolean()
-    # IsAccountSupplier	FLOAT	NULLABLE		
-    is_account_supplier = fields.Boolean()
     # IsSupplier	FLOAT	NULLABLE		
     is_supplier = fields.Boolean()
 
 
-class LRAIncedent(models.Model):
-    _name = 'lra.incident'
-    _description = 'An incident that has occured in the LRA (i.e. Crime)'
+# class LRAIncedent(models.Model):
+#     _name = 'lra.incident'
+#     _description = 'An incident that has occured in the LRA (i.e. Crime)'
 
-    time = fields.Date()
-    unit_number = fields.Char()
-    severity = fields.Char()
-    description = fields.Text()
-    entity_ids = fields.One2many(
-          "res.partner", string="Entity ids", store=True)
-    region = fields.Char()
-    coordinates = fields.Char()
+#     time = fields.Date()
+#     unit_number = fields.Char()
+#     severity = fields.Char()
+#     description = fields.Text()
+#     entity_ids = fields.One2many(
+#           "res.partner", string="Entity ids", store=True)
+#     region = fields.Char()
+#     coordinates = fields.Char()
 

@@ -1,0 +1,27 @@
+"StockManufTypeID","StockID","ManufType","ManufDesc","DurationInMins"
+"2","3045","2474","Cutting and sanding","120"
+"3","3045","2477","Seal and varnish","300"
+"4","3045","2474","Polishing","20"
+"5","3049","2478","1. Add Shellsol 2325, Shellsol A 100 and Petrolad 639 in this order, whilst mixing and circulating.								
+2. Add LA 3307, mix and circulate for 30 minutes.								
+3. Draw intermediate sample for lab and await approval.								
+4. Add Green Dye and circulate for 5 minutes.								
+5. Draw final sample for lab.
+","30"
+"6","3049","2483","1.Odour Test
+2. Appearance
+3. Absorbance
+4. Density
+5. Flash Point
+6. Moisture Content
+7. Demo Machine","30"
+"7","33492","4215","1. Cut segments
+2. Solder joins
+3. Insulate","30"
+"8","33492","4216","1. Test with cable tester.","5"
+"9","10093","4215","Angle grind the lime into adsflkadsf","20"
+"10","10093","4215","1. Cut segments
+2. Solder joins
+3. Insulate","30"
+"11","10093","4216","1. Test with cable tester.","5"
+"12","33498","4381","Put stuff together.","35"

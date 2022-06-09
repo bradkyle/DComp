@@ -1,0 +1,3 @@
+"contractid","EntityID","EntityContactID","CustodianID","Name","Path","DocTypeID","Keywords","ModuleID","PipelineID","Department","cDuration","startDate","endDate","renewalDate","natureOfContact","cValue","Agreementid","addByID","modifiedByID","review","reviewDate","MBDocID"
+"4","54546","73424","73424","Banking details.doc","C:\Users\Public\Documents\Lapp Stuff","","","","","test","1","2009-11-12 00:00:00","2009-11-12 00:00:00","2009-11-12 00:00:00","test","0","3378","1","","2","2009-11-12 00:00:00",""
+"3","54545","-1","-1","Testing.doc","C:\Documents and Settings\GerhardO\My Documents","","","","","this","24","2009-04-01 00:00:00","2012-04-01 00:00:00","2009-04-09 00:00:00","dunno","12,500.89","2327","1","1","24","2011-04-01 00:00:00","27"

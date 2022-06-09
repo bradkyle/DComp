@@ -1,0 +1,7 @@
+"LicenceManID","Entityid","entitycontactid","Billingdate","paymenttypeid","Amount","Description","MonthlyAmount","AccountManagerID","Status","BillingFrequency","ProjectID"
+"14","66815","92448","2011-12-20 00:00:00","","123123.0000","123123","20000.0000","1","Active","Montly SLA","10065"
+"15","60384","82325","2010-01-19 00:00:00","","50000.0000","","4166.6700","","Active","Annually","36"
+"17","60389","82340","2010-01-22 00:00:00","","2000.0000","","166.6700","1","Active","Annually","53"
+"18","60377","82308","2009-01-29 00:00:00","","2400.0000","testing","200.0000","1","Active","Annually","38"
+"19","60384","82325","2010-01-25 00:00:00","","40000.0000","asdfghjk
+dfghujikl;'","3333.3300","1","Postponed","Annually","35"

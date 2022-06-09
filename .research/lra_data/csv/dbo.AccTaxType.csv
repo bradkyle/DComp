@@ -1,0 +1,3 @@
+"TaxTypeID","TaxTypeName","TaxPercentage","IsDefault","InputGLCodeID","OutputGLCodeID","InputTaxReportGroupID","OutputTaxReportGroupID"
+"1","VAT","14","1","","","",""
+"2","VAT Exempt","0","0","","","",""

@@ -1,0 +1,2 @@
+"AsteriskID","Server","Port","Uid","Pwd","DialOutPrefix","ConnectTimeoutMS","MySQLConnectionString","MySQLGetCallSQL"
+"1","192.168.5.252","5038","binary","password","0","10000","Driver={MySQL ODBC 3.51 driver};Server=192.168.5.252;Option=16834;Database=asteriskcdrdb;uid=bfadmin;pwd=bfadmin","select calldate, clid, channel, src, dst, dcontext as context, duration, disposition from cdr {where}"

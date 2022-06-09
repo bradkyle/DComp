@@ -1,0 +1,3 @@
+"LeadAddrID","LeadID","AddressType","Address1","Address2","Address3","City","Region","Code","Country","State","TempID","goldmine"
+"1","72","Physical Address","Test Lead Address","","","Durban","","4000","","","",""
+"3","97","Physical Address","123","","","Johannesburg","Gauteng","2000","South Africa","","",""

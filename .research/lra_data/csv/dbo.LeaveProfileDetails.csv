@@ -1,0 +1,3 @@
+"LeavedefaultID","LeaveName","HoursPerDay","CalcLeave","Increment","MaxDays","StudyLeave","FamilyLeave","SickLeave","LeaveStartDate","MaxAccumMonths","AnnLeavePerUOM","CalcLeavePer","AnnLeaveUOM","SickLeaveCycleDuration","WorkDays","MinDays","OverTimeLeave"
+"26","Management","8","35.0","0","999","3","5","30","2005-07-25 00:00:00","0","day(s)","1.0","leave cycle","36.0","2,3,4,5,6","",""
+"30","Basic Staff ","8","17.0","1","30","3","5","30","2005-07-25 00:00:00","6","day(s)","1.0","leave cycle","36.0","2,3,4,5,6","",""

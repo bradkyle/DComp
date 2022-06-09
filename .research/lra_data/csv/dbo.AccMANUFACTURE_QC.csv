@@ -1,0 +1,7 @@
+"ManufQCID","DocID","OutputID","TestName","MinVal","TypVal","MaxVal","UOM","Results"
+"1","40","2","Check bulb","10","15","20","Lumens",""
+"3","39","","Test","8","9","10","10","test"
+"4","39","4","Check bulb","10","15","20","Lumens",""
+"6","41","0","Check bulb","10","15","20","Lumens",""
+"7","41","5","Check bulb","10","15","20","Lumens",""
+"8","39","6","Check bulb","10","15","20","Lumens",""

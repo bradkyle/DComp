@@ -1,0 +1,3 @@
+"DocRulesID","RuleName","RuleDescription","ReduceByPerc","AdjustStock"
+"23","50% Deposit","Decrease value by 50%, no stock adjustments","50.0","0"
+"24","50% Final Balance","Decrease value by 50%, adjust stock","50.0","1"

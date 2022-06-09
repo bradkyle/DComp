@@ -1,0 +1,2 @@
+"SMSTemplateID","Template","Name"
+"17","Dear  [[]name]. This is a friendly reminder of your appointment from  [[]start] until  [[]end], regarding:  [[]subject].","Demo SMS Template"

@@ -1,0 +1,3 @@
+"CourseScheduleID","AssessorID","Signatory1","Signatory2","CertText","Division","CourseTitle","PFLearnProgramID","TrainerID","VenueID","Confirmed","Inhouse","StartDate","EndDate","Color","DocID","faccilitatorID","courselocked","MediatorID"
+"1","2560","","","jyghf","2145","Test Course","1","","1","0","0","","","","","","0",""
+"2","","","","","2396","","","","","0","0","","","","","","0",""

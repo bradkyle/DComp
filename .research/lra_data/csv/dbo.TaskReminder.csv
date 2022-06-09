@@ -1,0 +1,26 @@
+"TaskReminderID","EntityContactID","ForUserID","DivID","TaskDate","TaskName","Snooze","SnoozeTime","Dismiss","AssignedContact","OrganizerID","OwnerID","PriorityID","userviewid","DateCompleted","TotalHours","ActualHours","Companies","Milaege","BillingInfo","AdditionalInfo","PercentageID","userid","activityid","createbyID","Complete","ProjectID","RecurringActionID","AssessmentID","bittypeid"
+"132","98014","382","5830","2014-01-15 17:50:40","12 January 2014 Board Minutes","0","","0","","382","382","5870","","2014-01-28 17:50:40","","","","","","BOARD MINUTES (JAN BOARD MEETING 15 JANUARY 2014)
+
+Apologies: Linda Horsefield","49","382","","382","No","","","",""
+"135","98014","378","5830","2014-03-11 19:35:03","12th FEBRUARY 2014 Board Minutes","0","","0","","","382","","","2014-03-11 19:35:03","","","","","","","29","378","","378","No","","","",""
+"136","98014","379","5830","2014-03-12 11:43:06","12 March 2014 Board Minutes","0","","0","","382","393","5870","","2014-04-14 11:43:06","","","","","","Apologies: Natasha Foster","55","379","","379","No","","","",""
+"137","98014","379","5830","2014-06-11 11:56:23","11 June 2014 Board Minutes","0","","0","","382","393","5870","","2014-07-12 11:56:23","","","","","","Apologies:  Natasha Foster, Avril Kearns-Eastwick","53","379","","379","No","","","",""
+"138","98014","379","5830","2014-04-09 12:02:30","09 April 2014 Board Minutes","0","","0","","382","382","5870","","2014-08-12 12:02:30","","","","","","Apologies:  Sally Pearson; Karina Taylor
+Absent:	Natasha Foster","72","379","","379","No","","","",""
+"139","98832","378","5830","2014-05-14 12:08:05","14 May 2014 Board Minutes","0","","0","","382","393","5870","","2014-06-17 12:08:05","","","","","","Apologies - Grant Tyson","100","378","","378","Yes","","","",""
+"140","98014","379","5830","2014-05-14 13:02:40","14 May 2014 Board Minutes","0","","0","","382","393","5871","","2014-06-16 13:02:40","","","","","","Apologies - Grant Tyson","12","379","","379","No","","","",""
+"141","98014","379","5830","2014-07-16 13:08:26","16 July 2014 Board Minutes","0","","0","","382","382","5870","","2014-08-12 13:08:26","","","","","","Apologies:  	Karina Taylor, Jane Londal, Grant Tyson
+
+Absent:		Natasha Foster
+
+Minutes:  		Avril Kearns-Eastwick      AKE
+","36","379","","379","No","","","",""
+"142","98014","379","5830","2014-08-19 11:01:04","19 August 2014 Board Meeting","0","","0","","382","393","5870","","2014-08-19 11:01:04","","","","","","Apologies received from Natasha Foster","0","379","","379","No","","","",""
+"143","98014","379","5830","2014-08-13 09:26:28","13 August 2014 Board Meeting","0","","0","","382","393","5870","","2014-08-13 09:26:28","","","","","","No quorum present to hold a Board Meeting.
+
+Apologies received from David Foley; Natasha Foster; Ken Barter; Karina Taylor","32","379","","379","No","","","",""
+"144","98014","379","5830","2014-08-19 09:54:39","19 August 2014 Board Meeting","0","","0","","382","393","5870","","2014-08-19 09:54:39","","","","","","Apologies received from Natasha Foster","29","379","","379","No","","","",""
+"145","98014","379","5830","2014-09-10 10:19:36","10 September 2014 Board Meeting","0","","0","","382","393","5870","","2014-09-10 10:19:36","","","","","","Apologies:  Natasha Foster; Linda Horsfield; Avril Kearns-Eastwick","0","379","","379","No","","","",""
+"146","98014","379","5830","2014-10-08 10:55:42","08 October 2014 Board Meeting","0","","0","","382","393","5870","","2014-10-08 10:55:42","","","","","","Apologies received from Natasha Foster; Grant Tyson; Hamish McBain; John Siddall","50","379","","379","No","","","",""
+"147","98014","379","5830","2014-11-18 10:54:48","18 November 2014 Board Meeting","0","","0","","382","393","5870","","2014-11-18 10:54:48","","","","","","Apologies received from Natasha Foster ","0","379","","379","No","","","","0"
+"148","98014","379","5830","2014-12-10 12:01:51","10 December 2014 Board Meeting","0","","0","","382","393","5870","","2014-12-10 12:01:51","","","","","","Apologies:  received from Natasha Foster.","0","379","","379","No","","","","0"

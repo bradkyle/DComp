@@ -1,0 +1,3 @@
+"TicketAddressID","Country","State","TempID","EntityID","TicketID","AddressType","Address1","Address2","Address3","City","Region","Code","isTicketLocation"
+"1","South Africa","","","66860","76","Postal Address","PO Box 87","","","Lonehill","Gauteng","2062","0"
+"2","South Africa","","","66860","76","Physical Address","034 Concourse Crescent","","","Lonehill","Gauteng","0","0"
