@@ -60,7 +60,7 @@ jobs:
         ports:
           - "8069:8069"
           - "8072:8072" # live chat
-        depends_on:
+        needs:
           - postgres
 
     env:
