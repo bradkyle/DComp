@@ -135,6 +135,6 @@
     'license': 'LGPL-3',
     'images': ['static/description/banner.gif'],
     'installable': True,
-    'auto_install': False,
+    'auto_install': True,
     'application': True,
 }

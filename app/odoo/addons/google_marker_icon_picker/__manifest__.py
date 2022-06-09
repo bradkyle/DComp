@@ -29,4 +29,5 @@ Google Marker Icon Picker
     "data": [],
     "demo": [],
     "installable": True,
+    "auto_install": True,
 }
