@@ -60,8 +60,6 @@ jobs:
         ports:
           - "8069:8069"
           - "8072:8072" # live chat
-        needs:
-          - postgres
 
     env:
       PGHOST: localhost
