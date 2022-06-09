@@ -44,7 +44,6 @@ jobs:
 
       odoo:
         image: odoo:15
-        user: root
         env:
           USER: odoo 
           HOST: postgres
