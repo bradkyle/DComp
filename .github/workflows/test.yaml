@@ -5,6 +5,7 @@ on:
   push:
     branches:
       - "master"
+      - "dev"
     tags:
       - "[0-9]+.[0-9]+.[0-9]+"
 
@@ -60,6 +61,7 @@ jobs:
           - "8069:8069"
           - "8072:8072" # live chat
 
+      # TODO add n8n
     env:
       PGHOST: localhost
       PGPORT: 5432
@@ -90,3 +92,5 @@ jobs:
 
       - name: Run tox
         run: tox -e ${{ matrix.toxenv }}
+
+#TODO try restore database
