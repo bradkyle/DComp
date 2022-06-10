@@ -85,12 +85,14 @@ jobs:
             gettext
           pip install tox virtualenv
 
-      - name: Run odoo tests tox
-        run: tox -e ${{ matrix.toxenv }}
+      # - name: Run odoo tests tox
+      #   run: tox -e ${{ matrix.toxenv }}
 
       - uses: codecov/codecov-action@v1
 
-      - name: Run tox
-        run: tox -e ${{ matrix.toxenv }}
+      # - name: Run tox
+      #   run: tox -e ${{ matrix.toxenv }}
+
+      - name: 
 
 #TODO try restore database
