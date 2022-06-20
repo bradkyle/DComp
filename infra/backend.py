@@ -44,11 +44,10 @@ class Db(ComponentResource):
         super().__init__('custom:resource:Backend', name, {}, opts)
         self.name = args.db_name
 
-        if args.engine == 'mysql': self.port=3306
-        elif args.engine == 'postgres':self.port = 5432
-        else:
-            engine='mysql'
-            self.port=3306
+        self.port = {
+              'mysql': 3306,
+              'postgres': 5432
+        }[args.engine if args.engine is not None else 'postgres']
 
         self.user=random.RandomPassword(f'{name}_db_username',
             length=10,

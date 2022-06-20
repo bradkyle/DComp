@@ -3,10 +3,9 @@
 import pulumi
 import network
 import backend
-import pulumi_aws as aws
 
-import odoo.odoo as _odoo
-import n8n.n8n as _n8n
+# import odoo.odoo as _odoo
+# import n8n.n8n as _n8n
 from pulumi_aws import s3
 
 # Create an AWS resource (S3 Bucket)
@@ -82,7 +81,7 @@ pulumi.export('ECS Cluster Name', cluster.name)
 ODOO
 ////////////////////////////////////////////////////////////>
 """
-odoo=_odoo.Odoo(f'{service_name}-odoo', cluster, psql, _odoo.OdooArgs(
+odoo = _odoo.Odoo(f'{service_name}-odoo', cluster, psql, _odoo.OdooArgs(
     vpc_id=network.vpc.id,
     subnet_ids=subnet_ids,
     security_group_ids=[network.fe_security_group.id]
@@ -93,7 +92,7 @@ pulumi.export('ODOO URL', odoo.web_url)
 N8n
 ////////////////////////////////////////////////////////////>
 """
-n8n=_n8n.N8n(f'{service_name}-n8n', cluster, psql, _n8n.N8nArgs(
+n8n = _n8n.N8n(f'{service_name}-n8n', cluster, psql, _n8n.N8nArgs(
     vpc_id=network.vpc.id,
     subnet_ids=subnet_ids,
     security_group_ids=[network.fe_security_group.id]
